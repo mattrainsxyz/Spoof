@@ -44,6 +44,7 @@
 		A078A68929720FF70005C3E9 /* SpoofUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpoofUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A078A68D29720FF70005C3E9 /* SpoofUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoofUITests.swift; sourceTree = "<group>"; };
 		A078A68F29720FF70005C3E9 /* SpoofUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoofUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A078A69F297212F80005C3E9 /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +75,7 @@
 		A078A66629720FF60005C3E9 = {
 			isa = PBXGroup;
 			children = (
+				A078A69F297212F80005C3E9 /* Location.gpx */,
 				A078A67129720FF60005C3E9 /* Spoof */,
 				A078A68229720FF70005C3E9 /* SpoofTests */,
 				A078A68C29720FF70005C3E9 /* SpoofUITests */,
