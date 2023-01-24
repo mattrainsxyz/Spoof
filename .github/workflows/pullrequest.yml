@@ -6,8 +6,8 @@ on:
 
 jobs:
     build-iOS-latest:
-    name: Build and test on latest iOS
-    runs-on: macos-latest
+      name: Build and test on latest iOS
+      runs-on: macos-latest
 
     steps:
       - name: Checkout
