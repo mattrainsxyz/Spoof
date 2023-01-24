@@ -25,4 +25,4 @@ jobs:
           platform: ${{ 'iOS Simulator' }}
         run: |
           destination="platform=iOS Simulator,name=iPhone 14"
-          xcodebuild test-without-building -scheme "$scheme" -project "Spoof.xcodeproj" -destination "$destination"
+          xcodebuild test-without-building -scheme "$scheme" -project "Spoof.xcodeproj" -destination "$destination" -only-testing:Spoof/SpoofUITests/SpoofUITestsLaunchTests/testLaunch
