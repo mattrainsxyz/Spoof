@@ -27,8 +27,8 @@ jobs:
           destination="platform=iOS Simulator,name=iPhone 14"
           xcodebuild test-without-building -scheme "$scheme" -project "Spoof.xcodeproj" -destination "$destination" -only-testing:SpoofUITests/SpoofUITestsLaunchTests/testLaunch
 
-  build-iOS-15.5:
-    name: Build and test on iOS 15.5
+  build-iOS-fifteen:
+    name: Build and test on iOS 15
     runs-on: macos-latest
     
     steps:
