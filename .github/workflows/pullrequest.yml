@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: Build and Test using iPhone 13 running iOS 15.7
+    name: Build and Test using iPhone 13 Simulator running iOS 15.7
     runs-on: macos-latest
 
     steps:
@@ -15,18 +15,18 @@ jobs:
       - name: Build
         env:
           scheme: Spoof
-          platform: ${{ 'iOS' }}
+          platform: ${{ 'iOS Simulator' }}
         run: |
-          destination="platform=iOS,name=iPhone 13,OS=15.7"
+          destination="platform=iOS Simulator,name=iPhone 13,OS=15.7"
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
           xcodebuild build-for-testing -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "$destination"
       - name: Test
         env:
           scheme: Spoof
-          platform: ${{ 'iOS' }}
+          platform: ${{ 'iOS Simulator' }}
         run: |
-          destination="platform=iOS,name=iPhone 13,OS=15.7"
+          destination="platform=iOS Simulator,name=iPhone 13,OS=15.7"
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
           xcodebuild test-without-building -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "$destination"
