@@ -21,7 +21,7 @@ jobs:
           xcodebuild build-for-testing -scheme "$scheme" -project "Spoof.xcodeproj" -destination "$destination"
       - name: Test
         env:
-          scheme: Spoof
+          scheme: SpoofUITests
           platform: ${{ 'iOS Simulator' }}
         run: |
           destination="platform=iOS Simulator,name=iPhone 14"
