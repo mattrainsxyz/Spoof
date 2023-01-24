@@ -5,8 +5,8 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-    name: Build and Test
+    build-iOS-latest:
+    name: Build and test on latest iOS
     runs-on: macos-latest
 
     steps:
@@ -26,3 +26,30 @@ jobs:
         run: |
           destination="platform=iOS Simulator,name=iPhone 14"
           xcodebuild test-without-building -scheme "$scheme" -project "Spoof.xcodeproj" -destination "$destination" -only-testing:SpoofUITests/SpoofUITestsLaunchTests/testLaunch
+
+    build-iOS-15.5:
+      name: Build and test on iOS 15.5
+      runs-on: macos-latest
+
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v3
+        - name: Setup Xcode Version
+          uses: maxim-lobanov/setup-xcode@v1
+          with:
+            xcode-version: 13.4.1
+        - name: Build
+          env:
+            scheme: Spoof
+            platform: ${{ 'iOS Simulator' }}
+          run: |
+            destination="platform=iOS Simulator,name=iPhone 13,OS=15.5"
+            xcodebuild build-for-testing -scheme "$scheme" -project "Spoof.xcodeproj" -destination "$destination"
+        - name: Test
+          env:
+            scheme: Spoof
+            platform: ${{ 'iOS Simulator' }}
+          run: |
+            destination="platform=iOS Simulator,name=iPhone 13,OS=15.5"
+            xcodebuild test-without-building -scheme "$scheme" -project "Spoof.xcodeproj" -destination "$destination" -only-testing:SpoofUITests/SpoofUITestsLaunchTests/testLaunch
+            
