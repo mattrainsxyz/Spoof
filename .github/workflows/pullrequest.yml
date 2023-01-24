@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: Build and Test using iPhone 13 Simulator running iOS 15.7
+    name: Build and Test using iPhone 14 Simulator
     runs-on: macos-latest
 
     steps:
