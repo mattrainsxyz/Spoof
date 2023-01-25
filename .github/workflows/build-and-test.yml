@@ -4,8 +4,8 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: "30 14 * * 2-6"
-    # run on main at 10:30pm pst monday-friday (2:30pm utc tuesday-saturday)
+    - cron: "30 6 * * 2-6"
+    # run on main at 10:30pm pst monday-friday (6:30am utc tuesday-saturday)
 
 jobs:
   build-iOS-latest:
