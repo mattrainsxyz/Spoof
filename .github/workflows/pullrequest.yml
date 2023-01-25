@@ -1,8 +1,11 @@
-name: Pull request workflow
+name: Build and test workflow
 
 on:
   pull_request:
     branches: [ "main" ]
+  schedule:
+    - cron: "30 14 * * 2-6"
+    # run on main at 10:30pm pst monday-friday (2:30pm utc tuesday-saturday)
 
 jobs:
   build-iOS-latest:
